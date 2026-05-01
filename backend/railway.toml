@@ -1,6 +1,5 @@
-[build]
-builder = "NIXPACKS"
-watch = ["app/**"]
+[services.backend]
+build = { builder = "NIXPACKS" }
 
-[deploy]
+[services.backend.deploy]
 startCommand = "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
